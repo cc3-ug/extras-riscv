@@ -1,0 +1,82 @@
+Algunos esqueletos útiles:
+
+# ========== condicional logica negada ==========
+
+# asumiendo que mi codigo pedia 	a == b
+
+bne a0 a1 alt			# logica negada
+	# consecuencia
+	j fin
+
+alt:
+	# alternativa
+
+fin:
+	nop
+
+
+
+# ========== condicional con and ==========
+
+# asumiendo que mi codigo pedia		a == b AND c == d
+
+bne a0 a1 alt			# logica negada
+bne a2 a3 alt
+	# consecuencia
+	j fin
+
+alt:
+	# alternativa
+
+fin:
+	nop
+
+
+
+# ========== condicional cond or ========== 
+
+# asumiendo que mi codigo pedia		a == b OR c == d
+
+beq a0 a1 cons			# logica normal!!!
+beq a2 a3 cons
+	# alternativa		# como usamos logica normal, toca poner alternativa arriba
+	j fin
+
+cons:
+	# consecuencia		# y consecuencia abajo
+
+fin:
+	nop
+
+
+
+# ========== ciclo ========== 
+
+# asumiendo que mi codigo tenia    a < b    como condicion para continuar
+
+	# inicializacion
+
+cond:
+	bge a0 a1 fin		# logica negada
+
+	# instrucciones
+	# step
+	j cond
+
+fin:
+	nop
+
+
+
+# ========== multiplicaciones y divisiones ==========
+
+# estan en otra columna del Green Card, entonces a veces no las encuentran
+
+# a0 <- a1 * a2
+mul a0 a1 a2
+
+# a0 <- a1 / a2
+div a0 a1 a2
+
+# a0 <- a1 / a2
+rem a0 a1 a2
