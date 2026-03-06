@@ -4,7 +4,7 @@
 
 # Ejemplo:
 # Me dan 5, en binario es ...000101     Debo imprimir 2
-# Me dan 32, en binario es ...011111    Debo imprimir 5
+# Me dan 31, en binario es ...011111    Debo imprimir 5
 # Me dan 129, en binario es ...0010000001       Debo imprimir 2
 
 # Valor: 3 puntos
